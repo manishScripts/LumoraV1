@@ -41,9 +41,16 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/post", postRoute);
 app.use("/api/v1/message", messageRoute);
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "Welcome to the Lumora API!" });
-});
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "/frontend/dist")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    })
+} else {
+    app.get("/", (req, res) => {
+        res.status(200).json({ message: "Welcome to the Lumora API!" });
+    });
+}
 
 
 
