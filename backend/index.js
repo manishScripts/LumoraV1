@@ -23,10 +23,13 @@ const __dirname = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
+
+// Dynamic CORS origin based on environment
 const allowedOrigins = process.env.URL ? process.env.URL.split(',') : [];
 const corsOptions = {
     origin: (origin, callback) => {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        // Allow same-origin requests or listed origins
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
             callback(new Error('Not allowed by CORS'));
@@ -42,9 +45,17 @@ app.use("/api/v1/post", postRoute);
 app.use("/api/v1/message", messageRoute);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, "/frontend/dist")));
+    const frontendPath = path.resolve(__dirname, "frontend", "dist");
+    console.log("Serving static files from:", frontendPath);
+    app.use(express.static(frontendPath));
+    
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+        res.sendFile(path.resolve(frontendPath, "index.html"), (err) => {
+            if (err) {
+                console.error("Error sending index.html:", err);
+                res.status(500).send(err);
+            }
+        });
     })
 } else {
     app.get("/", (req, res) => {
