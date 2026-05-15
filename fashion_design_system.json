@@ -1,0 +1,518 @@
+  "elementStyling": {
+    "screens": {
+      "background": "#000000",
+      "statusBar": {
+        "background": "transparent",
+        "content": "#FFFFFF"
+      }
+    },
+    "authentication": {
+      "loginForm": {
+        "background": "#000000",
+        "container": {
+          "background": "transparent",
+          "padding": "48px 32px",
+          "maxWidth": "400px",
+          "margin": "0 auto"
+        },
+        "heading": {
+          "color": "#FFFFFF",
+          "fontSize": "32px",
+          "fontWeight": "600",
+          "marginBottom": "8px"
+        },
+        "subtitle": {
+          "color": "#9CA3AF",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "marginBottom": "32px"
+        },
+        "DO_NOT": [
+          "Apply form backgrounds to input fields",
+          "Use form heading colors for body text",
+          "Apply form padding to individual inputs"
+        ]
+      },
+      "inputs": {
+        "background": "#374151",
+        "border": "1px solid #374151",
+        "borderRadius": "8px",
+        "padding": "16px",
+        "color": "#FFFFFF",
+        "fontSize": "16px",
+        "marginBottom": "16px",
+        "placeholder": {
+          "color": "#9CA3AF"
+        },
+        "focus": {
+          "background": "#4B5563",
+          "border": "1px solid #877EFF",
+          "outline": "none",
+          "boxShadow": "0 0 0 2px rgba(135, 126, 255, 0.2)"
+        },
+        "hover": {
+          "background": "#4B5563",
+          "border": "1px solid #6B7280"
+        },
+        "DO_NOT": [
+          "Apply input backgrounds to buttons",
+          "Use input border colors on cards",
+          "Apply input focus states to non-interactive elements"
+        ]
+      },
+      "labels": {
+        "color": "#FFFFFF",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "marginBottom": "8px",
+        "display": "block",
+        "DO_NOT": [
+          "Use label colors for placeholder text",
+          "Apply label styling to form descriptions"
+        ]
+      }
+    },
+    "navigation": {
+      "sidebar": {
+        "background": "#000000",
+        "width": "240px",
+        "padding": "24px 16px",
+        "border": "none",
+        "DO_NOT": [
+          "Apply sidebar backgrounds to content areas",
+          "Use sidebar padding on other containers"
+        ]
+      },
+      "logo": {
+        "container": {
+          "background": "transparent",
+          "padding": "16px 0 32px 0",
+          "marginBottom": "24px"
+        },
+        "text": {
+          "color": "#FFFFFF",
+          "fontSize": "24px",
+          "fontWeight": "700"
+        },
+        "icon": {
+          "fill{
+  "designSystem": {
+    "name": "Snapgram Social Media Platform",
+    "version": "2.0.0",
+    "description": "Dark-themed social media interface with purple accent system for content sharing and user interaction"
+  },
+  "colorPalette": {
+    "primary": {
+      "purple": "#877EFF",
+      "purpleHover": "#6C63FF",
+      "purplePressed": "#5A52E3",
+      "purpleLight": "#A7A1FF",
+      "purpleDark": "#5B52CC"
+    },
+    "secondary": {
+      "blue": "#3B82F6",
+      "blueHover": "#2563EB",
+      "bluePressed": "#1D4ED8",
+      "pink": "#EC4899",
+      "pinkHover": "#DB2777",
+      "pinkPressed": "#BE185D"
+    },
+    "neutral": {
+      "white": "#FFFFFF",
+      "lightGray": "#F8F9FA",
+      "mediumGray": "#6B7280",
+      "darkGray": "#374151",
+      "charcoal": "#1F2937",
+      "almostBlack": "#111827",
+      "black": "#000000"
+    },
+    "background": {
+      "primary": "#000000",
+      "secondary": "#111827",
+      "tertiary": "#1F2937",
+      "surface": "#374151",
+      "card": "#1F2937",
+      "cardHover": "#374151",
+      "input": "#374151",
+      "inputFocus": "#4B5563"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#D1D5DB",
+      "tertiary": "#9CA3AF",
+      "quaternary": "#6B7280",
+      "accent": "#877EFF",
+      "link": "#877EFF",
+      "linkHover": "#A7A1FF"
+    },
+    "border": {
+      "primary": "#374151",
+      "secondary": "#4B5563",
+      "focus": "#877EFF",
+      "hover": "#6B7280"
+    },
+    "status": {
+      "success": "#10B981",
+      "error": "#EF4444",
+      "warning": "#F59E0B",
+      "info": "#3B82F6"
+    }
+  },
+  "elementStyling": {
+    "screens": {
+      "background": "#000000",
+      "statusBar": {
+        "background": "transparent",
+        "content": "#FFFFFF"
+      }
+    },
+    "cards": {
+      "postCard": {
+        "background": "#000000",
+        "border": "none",
+        "borderRadius": "0px",
+        "shadow": "none",
+        "DO_NOT": [
+          "Apply gradients to post card backgrounds",
+          "Add borders to main post containers",
+          "Use card background colors on content areas"
+        ]
+      },
+      "storyCard": {
+        "background": "linear-gradient(135deg, #FF6B35 0%, #FF8A50 100%)",
+        "border": "2px solid #FF6B35",
+        "borderRadius": "50%",
+        "shadow": "0 2px 8px rgba(255, 107, 53, 0.3)",
+        "width": "60px",
+        "height": "60px",
+        "DO_NOT": [
+          "Apply story gradients to other circular elements",
+          "Use story border colors on rectangular cards"
+        ]
+      },
+      "profileCard": {
+        "background": "#2C2C2E",
+        "border": "none",
+        "borderRadius": "16px",
+        "shadow": "0 4px 12px rgba(0, 0, 0, 0.3)",
+        "DO_NOT": [
+          "Apply profile card backgrounds to buttons",
+          "Use profile card radius on small elements"
+        ]
+      },
+      "contentCard": {
+        "background": "#1C1C1E",
+        "border": "none",
+        "borderRadius": "12px",
+        "shadow": "0 2px 8px rgba(0, 0, 0, 0.2)",
+        "DO_NOT": [
+          "Apply content card styling to navigation elements",
+          "Use content card colors on text elements"
+        ]
+      }
+    },
+    "buttons": {
+      "primary": {
+        "background": "#FF6B35",
+        "text": "#FFFFFF",
+        "border": "none",
+        "borderRadius": "25px",
+        "shadow": "0 2px 8px rgba(255, 107, 53, 0.3)",
+        "hover": {
+          "background": "#E55A2B",
+          "shadow": "0 4px 12px rgba(255, 107, 53, 0.4)"
+        },
+        "pressed": {
+          "background": "#CC4E24",
+          "shadow": "0 1px 4px rgba(255, 107, 53, 0.2)"
+        },
+        "DO_NOT": [
+          "Apply primary button colors to text elements",
+          "Use primary button backgrounds on icons"
+        ]
+      },
+      "secondary": {
+        "background": "transparent",
+        "text": "#FFFFFF",
+        "border": "1px solid #48484A",
+        "borderRadius": "25px",
+        "shadow": "none",
+        "hover": {
+          "background": "#48484A",
+          "border": "1px solid #8E8E93"
+        },
+        "DO_NOT": [
+          "Apply secondary button borders to cards",
+          "Use secondary button text colors on primary elements"
+        ]
+      },
+      "icon": {
+        "background": "transparent",
+        "iconColor": "#FFFFFF",
+        "border": "none",
+        "borderRadius": "50%",
+        "shadow": "none",
+        "hover": {
+          "background": "rgba(255, 255, 255, 0.1)",
+          "iconColor": "#FF6B35"
+        },
+        "DO_NOT": [
+          "Apply icon button backgrounds to text",
+          "Use icon button hover colors on static elements"
+        ]
+      }
+    },
+    "icons": {
+      "navigation": {
+        "fill": "#8E8E93",
+        "background": "transparent",
+        "size": "24px",
+        "active": {
+          "fill": "#FF6B35"
+        },
+        "DO_NOT": [
+          "Apply navigation icon colors to content icons",
+          "Use navigation icon backgrounds on other elements"
+        ]
+      },
+      "action": {
+        "fill": "#FFFFFF",
+        "background": "transparent",
+        "size": "20px",
+        "hover": {
+          "fill": "#FF6B35"
+        },
+        "DO_NOT": [
+          "Apply action icon colors to decorative icons",
+          "Use action icon sizing on navigation icons"
+        ]
+      },
+      "social": {
+        "fill": "#FFFFFF",
+        "background": "transparent",
+        "size": "22px",
+        "active": {
+          "fill": "#FF6B35"
+        },
+        "DO_NOT": [
+          "Apply social icon colors to system icons",
+          "Use social icon active states on inactive elements"
+        ]
+      }
+    },
+    "text": {
+      "heading": {
+        "primary": {
+          "color": "#FFFFFF",
+          "fontWeight": "700",
+          "fontSize": "24px",
+          "lineHeight": "1.2"
+        },
+        "secondary": {
+          "color": "#FFFFFF",
+          "fontWeight": "600",
+          "fontSize": "18px",
+          "lineHeight": "1.3"
+        }
+      },
+      "body": {
+        "primary": {
+          "color": "#FFFFFF",
+          "fontWeight": "400",
+          "fontSize": "16px",
+          "lineHeight": "1.4"
+        },
+        "secondary": {
+          "color": "#8E8E93",
+          "fontWeight": "400",
+          "fontSize": "14px",
+          "lineHeight": "1.4"
+        }
+      },
+      "caption": {
+        "primary": {
+          "color": "#8E8E93",
+          "fontWeight": "400",
+          "fontSize": "12px",
+          "lineHeight": "1.3"
+        },
+        "accent": {
+          "color": "#FF6B35",
+          "fontWeight": "600",
+          "fontSize": "12px",
+          "lineHeight": "1.3"
+        }
+      },
+      "DO_NOT": [
+        "Use heading colors for body text",
+        "Apply accent colors to large text blocks",
+        "Use secondary text colors for primary content"
+      ]
+    },
+    "images": {
+      "profile": {
+        "borderRadius": "50%",
+        "border": "2px solid #FF6B35",
+        "shadow": "0 2px 8px rgba(255, 107, 53, 0.2)",
+        "DO_NOT": [
+          "Apply profile image borders to content images",
+          "Use profile image shadows on rectangular images"
+        ]
+      },
+      "content": {
+        "borderRadius": "12px",
+        "border": "none",
+        "shadow": "0 2px 8px rgba(0, 0, 0, 0.2)",
+        "DO_NOT": [
+          "Apply content image radius to profile images",
+          "Use content image styling on thumbnails"
+        ]
+      },
+      "thumbnail": {
+        "borderRadius": "8px",
+        "border": "none",
+        "shadow": "none",
+        "DO_NOT": [
+          "Apply thumbnail styling to hero images",
+          "Use thumbnail radius on large images"
+        ]
+      }
+    },
+    "overlays": {
+      "imageOverlay": {
+        "background": "linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%)",
+        "DO_NOT": [
+          "Apply image overlays to solid backgrounds",
+          "Use image overlay gradients on buttons"
+        ]
+      },
+      "modalOverlay": {
+        "background": "rgba(0, 0, 0, 0.8)",
+        "DO_NOT": [
+          "Apply modal overlay to content areas",
+          "Use modal overlay opacity on other elements"
+        ]
+      }
+    },
+    "effects": {
+      "shadows": {
+        "card": "0 4px 12px rgba(0, 0, 0, 0.3)",
+        "button": "0 2px 8px rgba(255, 107, 53, 0.3)",
+        "floating": "0 8px 24px rgba(0, 0, 0, 0.4)",
+        "DO_NOT": [
+          "Apply card shadows to text elements",
+          "Use button shadows on non-interactive elements",
+          "Apply floating shadows to static content"
+        ]
+      },
+      "blur": {
+        "background": "blur(20px)",
+        "DO_NOT": [
+          "Apply blur to text content",
+          "Use blur on interactive elements"
+        ]
+      }
+    },
+    "layout": {
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "32px",
+        "xxl": "48px"
+      },
+      "containers": {
+        "screen": {
+          "padding": "16px",
+          "background": "#000000"
+        },
+        "card": {
+          "padding": "16px",
+          "margin": "8px"
+        },
+        "section": {
+          "padding": "24px 16px",
+          "margin": "0"
+        }
+      }
+    },
+    "states": {
+      "hover": {
+        "transition": "all 0.2s ease-in-out",
+        "DO_NOT": [
+          "Apply hover states to non-interactive elements",
+          "Use hover transitions on mobile-only interfaces"
+        ]
+      },
+      "active": {
+        "transition": "all 0.1s ease-in-out",
+        "DO_NOT": [
+          "Apply active states to static elements",
+          "Use active transitions on decorative content"
+        ]
+      },
+      "disabled": {
+        "opacity": "0.5",
+        "pointerEvents": "none",
+        "DO_NOT": [
+          "Apply disabled opacity to loading states",
+          "Use disabled styles on placeholder content"
+        ]
+      }
+    }
+  },
+  "componentRules": {
+    "globalRules": [
+      "Dark theme is primary - avoid light backgrounds except for accent elements",
+      "Orange (#FF6B35) is reserved for interactive elements and accents only",
+      "White text (#FFFFFF) is for primary content, gray (#8E8E93) for secondary",
+      "Gradients only on story rings and image overlays",
+      "Rounded corners: 50% for circular elements, 12-16px for cards, 25px for buttons",
+      "Shadows only on elevated elements (cards, buttons, floating content)"
+    ],
+    "colorApplication": {
+      "primary": "Use #FF6B35 for: buttons, active states, accents, story rings",
+      "backgrounds": "Use #000000 for screens, #2C2C2E for cards, #1C1C1E for content areas",
+      "text": "Use #FFFFFF for primary text, #8E8E93 for secondary text",
+      "borders": "Use #48484A for subtle borders, #FF6B35 for accent borders"
+    },
+    "doNotRules": [
+      "DO NOT apply card gradients to button elements",
+      "DO NOT use button colors on text elements",
+      "DO NOT apply story ring styling to other circular elements",
+      "DO NOT use profile image borders on content images",
+      "DO NOT apply image overlays to solid backgrounds",
+      "DO NOT use navigation icon colors for action icons",
+      "DO NOT apply hover effects to non-interactive elements",
+      "DO NOT use primary button shadows on static elements",
+      "DO NOT apply blur effects to text content",
+      "DO NOT use accent colors for large text blocks"
+    ]
+  },
+  "implementationGuidelines": {
+    "cssVariables": {
+      "--color-primary": "#FF6B35",
+      "--color-background": "#000000",
+      "--color-surface": "#2C2C2E",
+      "--color-text-primary": "#FFFFFF",
+      "--color-text-secondary": "#8E8E93",
+      "--radius-small": "8px",
+      "--radius-medium": "12px",
+      "--radius-large": "16px",
+      "--radius-pill": "25px",
+      "--shadow-card": "0 4px 12px rgba(0, 0, 0, 0.3)",
+      "--shadow-button": "0 2px 8px rgba(255, 107, 53, 0.3)"
+    },
+    "responsiveBreakpoints": {
+      "mobile": "375px",
+      "tablet": "768px",
+      "desktop": "1024px"
+    },
+    "accessibility": {
+      "minContrastRatio": "4.5:1",
+      "focusIndicator": "2px solid #FF6B35",
+      "reducedMotion": "respect user preference"
+    }
+  }
+}
