@@ -11,9 +11,9 @@ import axios from 'axios'
 import { toast } from 'sonner'
 import { setPosts, setSelectedPost } from '@/redux/postSlice'
 import { Badge } from './ui/badge'
+import { API_URL } from "@/constants";
 
 const Post = ({ post }) => {
-    const API_URL = import.meta.env.VITE_BACKEND_URL;
     const [text, setText] = useState("");
     const [open, setOpen] = useState(false);
     const { user } = useSelector(store => store.auth);

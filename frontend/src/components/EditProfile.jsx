@@ -9,6 +9,7 @@ import { Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { setAuthUser } from '@/redux/authSlice';
+import { API_URL } from '@/constants';
 
 const EditProfile = () => {
     const imageRef = useRef();
@@ -46,7 +47,6 @@ const EditProfile = () => {
         }
         try {
             setLoading(true);
-            const API_URL = import.meta.env.VITE_BACKEND_URL;
             const res = await axios.post(`${API_URL}/api/v1/user/profile/edit`, formData,{
                 withCredentials:true
             });

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { setSelectedUser } from '@/redux/authSlice';
+import { API_URL } from '@/constants';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { MessageCircleCode } from 'lucide-react';
@@ -17,7 +18,6 @@ const ChatPage = () => {
 
     const sendMessageHandler = async (receiverId) => {
         try {
-            const API_URL = import.meta.env.VITE_BACKEND_URL;
             const res = await axios.post(`${API_URL}/api/v1/message/send/${receiverId}`, { textMessage }, {
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,3 +1,66 @@
+{
+  "designSystem": {
+    "name": "Lumora Social Media Platform",
+    "version": "2.0.0",
+    "description": "Dark-themed social media interface with purple accent system for content sharing and user interaction"
+  },
+  "colorPalette": {
+    "primary": {
+      "purple": "#877EFF",
+      "purpleHover": "#6C63FF",
+      "purplePressed": "#5A52E3",
+      "purpleLight": "#A7A1FF",
+      "purpleDark": "#5B52CC"
+    },
+    "secondary": {
+      "blue": "#3B82F6",
+      "blueHover": "#2563EB",
+      "bluePressed": "#1D4ED8",
+      "pink": "#EC4899",
+      "pinkHover": "#DB2777",
+      "pinkPressed": "#BE185D"
+    },
+    "neutral": {
+      "white": "#FFFFFF",
+      "lightGray": "#F8F9FA",
+      "mediumGray": "#6B7280",
+      "darkGray": "#374151",
+      "charcoal": "#1F2937",
+      "almostBlack": "#111827",
+      "black": "#000000"
+    },
+    "background": {
+      "primary": "#000000",
+      "secondary": "#111827",
+      "tertiary": "#1F2937",
+      "surface": "#374151",
+      "card": "#1F2937",
+      "cardHover": "#374151",
+      "input": "#374151",
+      "inputFocus": "#4B5563"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#D1D5DB",
+      "tertiary": "#9CA3AF",
+      "quaternary": "#6B7280",
+      "accent": "#877EFF",
+      "link": "#877EFF",
+      "linkHover": "#A7A1FF"
+    },
+    "border": {
+      "primary": "#374151",
+      "secondary": "#4B5563",
+      "focus": "#877EFF",
+      "hover": "#6B7280"
+    },
+    "status": {
+      "success": "#10B981",
+      "error": "#EF4444",
+      "warning": "#F59E0B",
+      "info": "#3B82F6"
+    }
+  },
   "elementStyling": {
     "screens": {
       "background": "#000000",
@@ -95,75 +158,8 @@
           "fontWeight": "700"
         },
         "icon": {
-          "fill{
-  "designSystem": {
-    "name": "Snapgram Social Media Platform",
-    "version": "2.0.0",
-    "description": "Dark-themed social media interface with purple accent system for content sharing and user interaction"
-  },
-  "colorPalette": {
-    "primary": {
-      "purple": "#877EFF",
-      "purpleHover": "#6C63FF",
-      "purplePressed": "#5A52E3",
-      "purpleLight": "#A7A1FF",
-      "purpleDark": "#5B52CC"
-    },
-    "secondary": {
-      "blue": "#3B82F6",
-      "blueHover": "#2563EB",
-      "bluePressed": "#1D4ED8",
-      "pink": "#EC4899",
-      "pinkHover": "#DB2777",
-      "pinkPressed": "#BE185D"
-    },
-    "neutral": {
-      "white": "#FFFFFF",
-      "lightGray": "#F8F9FA",
-      "mediumGray": "#6B7280",
-      "darkGray": "#374151",
-      "charcoal": "#1F2937",
-      "almostBlack": "#111827",
-      "black": "#000000"
-    },
-    "background": {
-      "primary": "#000000",
-      "secondary": "#111827",
-      "tertiary": "#1F2937",
-      "surface": "#374151",
-      "card": "#1F2937",
-      "cardHover": "#374151",
-      "input": "#374151",
-      "inputFocus": "#4B5563"
-    },
-    "text": {
-      "primary": "#FFFFFF",
-      "secondary": "#D1D5DB",
-      "tertiary": "#9CA3AF",
-      "quaternary": "#6B7280",
-      "accent": "#877EFF",
-      "link": "#877EFF",
-      "linkHover": "#A7A1FF"
-    },
-    "border": {
-      "primary": "#374151",
-      "secondary": "#4B5563",
-      "focus": "#877EFF",
-      "hover": "#6B7280"
-    },
-    "status": {
-      "success": "#10B981",
-      "error": "#EF4444",
-      "warning": "#F59E0B",
-      "info": "#3B82F6"
-    }
-  },
-  "elementStyling": {
-    "screens": {
-      "background": "#000000",
-      "statusBar": {
-        "background": "transparent",
-        "content": "#FFFFFF"
+          "fill": "#877EFF"
+        }
       }
     },
     "cards": {

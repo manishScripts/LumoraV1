@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { Link, useNavigate } from 'react-router-dom';
 import { Loader2, Sun, Moon } from 'lucide-react';
 import { useSelector } from 'react-redux';
+import { API_URL } from "@/constants";
 
 const Signup = () => {
     const [input, setInput] = useState({
@@ -37,7 +38,6 @@ const Signup = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const API_URL = import.meta.env.VITE_BACKEND_URL;
             const res = await axios.post(`${API_URL}/api/v1/user/register`, input, {
                 headers: {
                     'Content-Type': 'application/json'

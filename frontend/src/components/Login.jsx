@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Loader2, Sun, Moon } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthUser } from '@/redux/authSlice';
+import { API_URL } from "@/constants";
 
 const Login = () => {
     const [input, setInput] = useState({
@@ -38,7 +39,6 @@ const Login = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const API_URL = import.meta.env.VITE_BACKEND_URL;
             const res = await axios.post(`${API_URL}/api/v1/user/login`, input, {
                 headers: {
                     'Content-Type': 'application/json'

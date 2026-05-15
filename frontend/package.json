@@ -20,7 +20,6 @@
     "@stagewise-plugins/react": "^0.4.9",
     "@stagewise/toolbar-react": "^0.4.9",
     "axios": "^1.7.2",
-    "backend": "file:..",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.417.0",
