@@ -24,17 +24,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
-// Dynamic CORS origin based on environment
-const allowedOrigins = process.env.URL ? process.env.URL.split(',') : [];
+// CORS configuration - allowing all origins for unified deployment
 const corsOptions = {
-    origin: (origin, callback) => {
-        // Allow same-origin requests or listed origins
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: true, 
     credentials: true
 };
 app.use(cors(corsOptions));
