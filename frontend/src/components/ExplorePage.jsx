@@ -42,19 +42,27 @@ const ExplorePage = () => {
     const [selectedCategory, setSelectedCategory] = useState(categories[0]); // Default to Curated
     const [searchQuery, setSearchQuery] = useState("");
     const [currentSearchTerm, setCurrentSearchTerm] = useState("");
+    
+    // Refs for pagination to avoid dependency loops
+    const pageRef = useRef(1);
+    const videoPageRef = useRef(1);
+    const loadingRef = useRef(false);
+    const videoLoadingRef = useRef(false);
+    const hasMoreRef = useRef(true);
+    const videoHasMoreRef = useRef(true);
+    
     const observer = useRef();
 
     const fetchImages = useCallback(async (reset = false) => {
-        if (loading) return;
+        if (loadingRef.current) return;
         if (reset) {
-            setPage(1);
-            setImages([]);
-            setHasMore(true);
-            setLoading(true);
-        } else if (!hasMore) {
+            pageRef.current = 1;
+            hasMoreRef.current = true;
+        } else if (!hasMoreRef.current) {
             return;
         }
 
+        loadingRef.current = true;
         setLoading(true);
         try {
             let response;
@@ -62,39 +70,48 @@ const ExplorePage = () => {
                 Authorization: PEXELS_API_KEY,
             };
 
+            const currentPage = pageRef.current;
             if (currentSearchTerm) {
-                response = await axios.get(`https://api.pexels.com/v1/search?query=${currentSearchTerm}&page=${page}&per_page=30`, { headers });
+                response = await axios.get(`https://api.pexels.com/v1/search?query=${currentSearchTerm}&page=${currentPage}&per_page=30`, { headers });
             } else if (selectedCategory.query) {
-                response = await axios.get(`https://api.pexels.com/v1/search?query=${selectedCategory.query}&page=${page}&per_page=30`, { headers });
+                response = await axios.get(`https://api.pexels.com/v1/search?query=${selectedCategory.query}&page=${currentPage}&per_page=30`, { headers });
             } else {
-                response = await axios.get(`https://api.pexels.com/v1/curated?page=${page}&per_page=30`, { headers });
+                response = await axios.get(`https://api.pexels.com/v1/curated?page=${currentPage}&per_page=30`, { headers });
             }
 
             if (response.data.photos.length === 0) {
+                hasMoreRef.current = false;
                 setHasMore(false);
             } else {
-                setImages(prevImages => (reset ? response.data.photos : [...prevImages, ...response.data.photos]));
-                setPage(prevPage => prevPage + 1);
+                setImages(prevImages => {
+                    const newPhotos = response.data.photos.filter(
+                        newPhoto => !prevImages.some(prevPhoto => prevPhoto.id === newPhoto.id)
+                    );
+                    return reset ? response.data.photos : [...prevImages, ...newPhotos];
+                });
+                pageRef.current = currentPage + 1;
+                setPage(pageRef.current);
             }
         } catch (error) {
             console.error("Error fetching images:", error);
-            setHasMore(false); // Stop trying to fetch if there's an error
+            hasMoreRef.current = false;
+            setHasMore(false);
         } finally {
+            loadingRef.current = false;
             setLoading(false);
         }
-    }, [page, loading, hasMore, selectedCategory, currentSearchTerm]);
+    }, [selectedCategory, currentSearchTerm]);
 
     const fetchVideos = useCallback(async (reset = false) => {
-        if (videoLoading) return;
+        if (videoLoadingRef.current) return;
         if (reset) {
-            setVideoPage(1);
-            setVideos([]);
-            setVideoHasMore(true);
-            setVideoLoading(true);
-        } else if (!videoHasMore) {
+            videoPageRef.current = 1;
+            videoHasMoreRef.current = true;
+        } else if (!videoHasMoreRef.current) {
             return;
         }
 
+        videoLoadingRef.current = true;
         setVideoLoading(true);
         try {
             let response;
@@ -102,32 +119,44 @@ const ExplorePage = () => {
                 Authorization: PEXELS_API_KEY,
             };
 
+            const currentVidPage = videoPageRef.current;
             if (currentSearchTerm) {
-                response = await axios.get(`https://api.pexels.com/videos/search?query=${currentSearchTerm}&page=${videoPage}&per_page=30`, { headers });
+                response = await axios.get(`https://api.pexels.com/videos/search?query=${currentSearchTerm}&page=${currentVidPage}&per_page=30`, { headers });
             } else if (selectedCategory.query) {
-                response = await axios.get(`https://api.pexels.com/videos/search?query=${selectedCategory.query}&page=${videoPage}&per_page=30`, { headers });
+                response = await axios.get(`https://api.pexels.com/videos/search?query=${selectedCategory.query}&page=${currentVidPage}&per_page=30`, { headers });
             } else {
-                response = await axios.get(`https://api.pexels.com/videos/popular?page=${videoPage}&per_page=30`, { headers });
+                response = await axios.get(`https://api.pexels.com/videos/popular?page=${currentVidPage}&per_page=30`, { headers });
             }
 
             if (response.data.videos.length === 0) {
+                videoHasMoreRef.current = false;
                 setVideoHasMore(false);
             } else {
-                setVideos(prevVideos => (reset ? response.data.videos : [...prevVideos, ...response.data.videos]));
-                setVideoPage(prevPage => prevPage + 1);
+                setVideos(prevVideos => {
+                    const newVideos = response.data.videos.filter(
+                        newVid => !prevVideos.some(prevVid => prevVid.id === newVid.id)
+                    );
+                    return reset ? response.data.videos : [...prevVideos, ...newVideos];
+                });
+                videoPageRef.current = currentVidPage + 1;
+                setVideoPage(videoPageRef.current);
             }
         } catch (error) {
             console.error("Error fetching videos:", error);
+            videoHasMoreRef.current = false;
             setVideoHasMore(false);
         } finally {
+            videoLoadingRef.current = false;
             setVideoLoading(false);
         }
-    }, [videoPage, videoLoading, videoHasMore, selectedCategory, currentSearchTerm]);
+    }, [selectedCategory, currentSearchTerm]);
 
     useEffect(() => {
         if (activeTab === "photos") {
+            setImages([]); // Clear previous photos to show loading state correctly on tab/search change
             fetchImages(true);
         } else {
+            setVideos([]); // Clear previous videos
             fetchVideos(true);
         }
     }, [activeTab, selectedCategory, currentSearchTerm, fetchImages, fetchVideos]);
